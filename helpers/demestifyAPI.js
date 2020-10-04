@@ -81,6 +81,7 @@ function getCommentedParams(index, file) {
         data[temp[0].trim()] = String(temp[1].trim());
       }
     });
+    console.log(data);
     return data;
   } catch (err) {
     console.log(

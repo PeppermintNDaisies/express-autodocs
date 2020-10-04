@@ -26,12 +26,12 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/queries', auth, queries);
 app.use('/api/posts', require('./routes/api/posts'));
-/*
-{
-  "description":"Greets you with a hello message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas",
-  "label":"Public"
-}
-*/
+/**​
+​ * Represents a book.​
+​ * ​@constructor​
+​ * ​@param​ {​string​} title - The title of the book.​
+​ * ​@param {string} author - The author of the book.​
+​ */
 app.get('/sayHello', (req, res) => {
   res.send('Hello');
 });
@@ -39,29 +39,17 @@ app.get('/sayHello', (req, res) => {
 if (process.env.NODE_ENV == 'production') {
   // Set a static folder
   app.use(express.static('client/build'));
-  /*
-{
-  "description":"Renders the entire application message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas message lroem epsuafas asfasga awfhafas",
-  "label":"Public"
-}
-*/
+
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
-  /*
-    {
-      "description":"Creates a new user",
-      "label":"Private",
-      "inputs":{
-        "name":"The username by which he/she logs in",
-        "password": "A string password"
-      },
-      "outputs":{
-        "userid":"The id of the new user created",
-        "error":"Error message if any"
-      }
-    }
-  */
+
+  /**​
+​ * Represents a book.​
+​ * ​@constructor​
+​ * ​@param​ {​string​} title - The title of the book.​
+​ * ​@param {string} author - The author of the book.​
+​ */
   app.post('/users', auth, function (req, res) {
     res.send('User Created');
   });
